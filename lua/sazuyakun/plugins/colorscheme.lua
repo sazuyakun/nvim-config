@@ -1,9 +1,15 @@
 return {
-  "gmr458/vscode_modern_theme.nvim",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    -- Your configuration will go here
-    vim.cmd.colorscheme "vscode_modern"
-  end,
+	"olimorris/onedarkpro.nvim",
+	lazy = false,
+	priority = 1000,
+	opts = {
+		colors = {
+			onedark = { bg = "#15171A" },
+		},
+	},
+	config = function(_, opts)
+		-- Your configuration will go here
+		require("onedarkpro").setup(opts)
+		vim.cmd.colorscheme("onedark")
+	end,
 }
